@@ -1,6 +1,7 @@
 var opentok = require('opentok')(process.env.OPENTOK_KEY, process.env.OPENTOK_SECRET),
     http = require('http'),
     url = require('url'),
+    localtunnel = require('localtunnel'),
     _ = require('lodash');
 
 var server = http.createServer(function(req, res) {
@@ -84,4 +85,19 @@ var notFound = function(req, res) {
 var port = process.env.PORT || 5000;
 server.listen(port, function() {
   console.log('server listening on port ' + port);
+  startTunnel();
 });
+
+
+var startTunnel = function() {
+  var opts = {};
+  if (process.env.TUNNEL_SUBDOMAIN) {
+    opts.subdomain = process.env.TUNNEL_SUBDOMAIN;
+  }
+  localtunnel(port, opts, function(err, tunnel) {
+    if (err) return console.error('an error occurred setting up the localtunnel', err.toString());
+    console.log('public URL:', tunnel.url);
+  }).on('close', function () {
+    console.log('localtunnel closed');
+  });
+};
