@@ -10,6 +10,8 @@ var server = http.createServer(function(req, res) {
     case '/':
       getSession(req, res);
       break;
+    default:
+      notFound(req, res);
   }
 });
 
@@ -71,6 +73,12 @@ var getSession = function(req, res) {
       return respondWithSession(newSession);
     });
   }
+};
+
+var notFound = function(req, res) {
+    console.error('not found');
+    res.writeHead(404);
+    res.end('not found');
 };
 
 var port = process.env.PORT || 5000;
