@@ -7,9 +7,8 @@ Just a little node server for getting things done.
 Define the required environment variables in a file named `.env` at the root of the project. Then
 start the server process with `npm start` at the command line.
 
-A public URL is generated for the running server using a tunnelled connection to the local server.
-This can be useful for interacting with devices not on your wifi network (local NAT). The URL is
-logged to stdout (console).
+A public URL is generated using a tunnelled connection to the local server. This can be useful for
+interacting with devices not on your wifi network (local NAT). The URL is logged to stdout (console).
 
 Required environment variables:
   *  `OPENTOK_KEY`: An OpenTok API Key
