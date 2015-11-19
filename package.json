@@ -8,7 +8,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ankur Oberoi <aoberoi@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
+  "engines": {
+    "npm": "~2.14.7"
+  },
   "dependencies": {
     "foreman": "^1.1.0",
     "localtunnel": "^1.5.0",
