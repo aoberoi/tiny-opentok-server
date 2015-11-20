@@ -1,0 +1,9 @@
+{
+  "opentok": {
+    "key": "OPENTOK_KEY",
+    "secret": "OPENTOK_SECRET"
+  },
+  "server": {
+    "port": "PORT"
+  }
+}
