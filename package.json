@@ -13,6 +13,7 @@
   "author": "Ankur Oberoi <aoberoi@gmail.com>",
   "license": "MIT",
   "engines": {
+    "node": "~4.2.2",
     "npm": "~2.14.7"
   },
   "dependencies": {
