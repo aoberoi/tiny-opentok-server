@@ -1,0 +1,8 @@
+{
+  "only": [
+    "**/*.js",
+    "**/www"
+  ],
+  "presets": ["es2015"],
+  // extensions: [".js", ""]
+}
